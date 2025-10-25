@@ -1,0 +1,17 @@
+general:
+  kafka-topic: task-one-topic   # topic name for your tasks
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092   # for embedded Kafka tests, usually auto-configured
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.add.type.headers: true   # include type info for deserialization
+    consumer:
+      group-id: midas-core
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "com.jpmc.midascore.foundation"

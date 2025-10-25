@@ -1,0 +1,24 @@
+<settings>
+    <mirrors>
+        <mirror>
+            <id>aliyunmaven</id>
+            <mirrorOf>central</mirrorOf>
+            <name>Aliyun Maven Central Mirror</name>
+            <url>https://maven.aliyun.com/repository/central</url>
+        </mirror>
+    </mirrors>
+
+    <proxies>
+        <proxy>
+            <id>example-proxy</id>
+            <active>true</active>
+            <protocol>http</protocol>
+            <host>proxy.company.com</host>
+            <port>8080</port>
+            <username>your-username</username>
+            <password>your-password</password>
+            <nonProxyHosts>localhost|127.0.0.1</nonProxyHosts>
+        </proxy>
+
+    </proxies>
+</settings>
